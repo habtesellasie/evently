@@ -41,8 +41,7 @@
                     }">
                         <button type="button" @click="onHandleLike"
                             class="text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                            :class="eventLike ? 'bg-transparent border border-slate-300 hover:bg-gray-100' :
-                                'bg-slate-400 hover:bg-slate-500'">
+                            :class="eventLike ? 'bg-red-700 hover:bg-red-800' : 'bg-slate-400 hover:bg-slate-500'">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-3.5 h3.5 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round"

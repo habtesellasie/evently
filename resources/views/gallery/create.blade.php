@@ -9,7 +9,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <form method="POST" action="{{ route('gallery.store') }}" enctype="multipart/form-data"
+            <form method="POST" action="{{ route('galleries.store') }}" enctype="multipart/form-data"
                 class="p-4 bg-white dark:bg-slate-800 rounded-md space-y-2">
                 @csrf
                 <div>

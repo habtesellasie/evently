@@ -5,7 +5,7 @@
                 {{ __('Gallery') }}
             </h2>
             <div>
-                <a href="{{ route('gallery.create') }}" class="dark:text-white hover:text-slate-200">New Gallery</a>
+                <a href="{{ route('galleries.create') }}" class="dark:text-white hover:text-slate-200">New Gallery</a>
             </div>
         </div>
     </x-slot>
@@ -45,13 +45,13 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="flex space-x-2">
-                                            <a href="{{ route('gallery.edit', $gallery) }}"
+                                            <a href="{{ route('galleries.edit', $gallery) }}"
                                                 class="text-green-400 hover:text-green-600">Edit</a>
                                             <form method="POST" class="text-red-400 hover:text-red-600"
-                                                action="{{ route('gallery.destroy', $gallery) }}">
+                                                action="{{ route('galleries.destroy', $gallery) }}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="{{ route('gallery.destroy', $gallery) }}"
+                                                <a href="{{ route('galleries.destroy', $gallery) }}"
                                                     onclick="event.preventDefault();
                                         this.closest('form').submit();">
                                                     Delete

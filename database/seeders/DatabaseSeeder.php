@@ -37,10 +37,5 @@ class DatabaseSeeder extends Seeder
         Tag::create(['name' => 'Laravel', 'slug' => 'laravel']);
         Tag::create(['name' => 'Vue JS', 'slug' => 'vue-js']);
         Tag::create(['name' => 'Livewire', 'slug' => 'live-wire']);
-
-        Gallery::create(['user_id' => '1', 'image' => 'GMozCl6JH1l3MUqUarVxoDslqHkdPLbbYSgtssKm.png', 'caption' => 'what the hell bro']);
-        Gallery::create(['user_id' => '1', 'image' => 'GMozCl6JH1l3MUqUarVxoDslqHkdPLbbYSgtssKm.png', 'caption' => 'not that hell sis']);
-        Gallery::create(['user_id' => '2', 'image' => 'GMozCl6JH1l3MUqUarVxoDslqHkdPLbbYSgtssKm.png', 'caption' => 'come on now srological']);
-        Gallery::create(['user_id' => '2', 'image' => 'GMozCl6JH1l3MUqUarVxoDslqHkdPLbbYSgtssKm.png', 'caption' => 'biosis comenow']);
     }
 }

@@ -24,7 +24,7 @@ use App\Http\Controllers\SavedEventSystemController;
 Route::get('/', WelcomeController::class)->name('welcome');
 Route::get('/e', EventIndexController::class)->name('eventIndex');
 Route::get('/e/{id}', EventShowController::class)->name('eventShow');
-Route::get('/galleries', GalleryIndexController::class)->name('galleryIndex');
+Route::get('/gallery', GalleryIndexController::class)->name('galleryIndex');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

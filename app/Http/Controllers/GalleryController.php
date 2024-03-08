@@ -41,7 +41,7 @@ class GalleryController extends Controller
                 'image' => $request->file('image')->store('galleries', 'public'),
             ]);
 
-            return redirect()->route('gallery.index');
+            return redirect()->route('galleries.index');
         }
 
         return back();
