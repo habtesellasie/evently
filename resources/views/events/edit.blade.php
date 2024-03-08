@@ -78,8 +78,10 @@
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             for="file_input">Upload file</label>
+                        <img src="{{ empty($event->image) ? 'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg' : asset('storage/' . $event->image) }}"
+                            alt="{{ $event->title }}" class="w-14 h-14 object-cover rounded-full mb-4">
                         <input
-                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 p-2"
                             id="file_input" type="file" name="image">
                         @error('image')
                             <div class="text-sm text-red-400">{{ $message }}</div>
@@ -90,7 +92,7 @@
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start Date</label>
                         <input type="date" id="start_date" name="start_date"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            value="{{ old('start_date', $event->start_date->format('Y-m-d')) }}">
+                            value="{{ old('start_date', $event->start_date) }}">
                         @error('start_date')
                             <div class="text-sm text-red-400">{{ $message }}</div>
                         @enderror
@@ -100,7 +102,7 @@
                             Date</label>
                         <input type="date" id="end_date" name="end_date"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            value="{{ old('end_date', $event->end_date->format('Y-m-d')) }}">
+                            value="{{ old('end_date', $event->end_date) }}">
                         @error('end_date')
                             <div class="text-sm text-red-400">{{ $message }}</div>
                         @enderror
@@ -139,14 +141,14 @@
                 <div>
                     <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Tags</h3>
                     <ul
-                        class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white mb-4">
                         @foreach ($tags as $tag)
                             <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
                                 <div class="flex items-center pl-3">
-                                    <input id="vue-checkbox-list" type="checkbox" name="tags[]"
+                                    <input id="{{ $tag->name }}" type="checkbox" name="{{ $tag->name }}"
                                         value="{{ $tag->id }}" @checked($event->hasTag($tag))
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="vue-checkbox-list"
+                                    <label for="{{ $tag->name }}"
                                         class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $tag->name }}</label>
                                 </div>
                             </li>

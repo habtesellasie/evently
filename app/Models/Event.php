@@ -48,4 +48,14 @@ class Event extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function savedEvents(): HasMany
+    {
+        return $this->hasMany(SavedEvent::class);
+    }
+
+    public function hasTag($tag)
+    {
+        return $this->tags->contains($tag);
+    }
 }

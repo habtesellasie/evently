@@ -9,7 +9,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <form method="POST" action="{{ route('galleries.update', $gallery->id) }}" enctype="multipart/form-data"
+            <form method="POST" action="{{ route('gallery.update', $gallery->id) }}" enctype="multipart/form-data"
                 class="p-4 bg-white dark:bg-slate-800 rounded-md space-y-2">
                 @csrf
                 @method('PUT')
@@ -29,7 +29,7 @@
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload
                         file</label>
                     <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 p-2"
                         id="file_input" type="file" name="image">
                     @error('image')
                         <div class="text-sm text-red-400">{{ $message }}</div>
